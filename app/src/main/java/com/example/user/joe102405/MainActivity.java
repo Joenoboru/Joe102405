@@ -12,13 +12,14 @@ import android.widget.RadioGroup;
 public class MainActivity extends AppCompatActivity {
     CheckBox chk;
     RadioGroup rb;
-    ProgressBar pb;
+    ProgressBar pb,pb2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //checkbox
         pb =(ProgressBar) findViewById(R.id.progressBar);
+        pb2 =(ProgressBar) findViewById(R.id.progressBar2);
         chk = (CheckBox)findViewById(R.id.checkBox);
         chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -67,5 +68,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }.start();
 
+            }
+            public void click2(View v)
+            {
+                pb2.setProgress(pb2.getProgress()+10);
             }
 }
